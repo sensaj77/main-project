@@ -20,7 +20,7 @@ const question = (state = exam, action) => {
     switch (action.type) {
         case 'SWITCH_QUESTION':
         	let questionData = action.payload.response;
-        	console.info('questionData>>>>', JSON.stringify(questionData, null, 2));
+        	/*console.info('questionData>>>>', JSON.stringify(questionData, null, 2));*/
             return Object.assign({}, questionData);
         default:
             return state;

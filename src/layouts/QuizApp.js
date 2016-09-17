@@ -35,10 +35,10 @@ class QuizApp extends React.Component {
     this.switchQuestionHandler = this.switchQuestionHandler.bind(this);
   }
   switchQuestionHandler(  ) {
-    /*console.log('this props are>>>>', JSON.stringify(this.props,null,  2));
-    */
-    let myData = examQuestions;
+    console.log('this props are>>>>', JSON.stringify(this.props,null,  2));
     
+    let myData = examQuestions;
+   
     myData.splice(0,1);
     
     if(myData.length === 0) {
@@ -56,7 +56,14 @@ class QuizApp extends React.Component {
           <input type='radio' name='choices' value='B' /> {this.props[0].questions[2]} <br />
           <input type='radio' name='choices' value='C' /> {this.props[0].questions[3]} <br />
          
-          <button onClick={this.switchQuestionHandler}>Next question</button> 
+          <button onClick={this.switchQuestionHandler}>Next question</button>
+          <Link to='/results-view'>
+            <button>Results</button>
+          </Link>
+          <Link to='/'>
+            <button>Home</button>
+          </Link>
+          
       </div>
     );
   }
@@ -65,7 +72,18 @@ class QuizApp extends React.Component {
 export default connect(mapStateToProps, mapDispatchToProps)(QuizApp);
 
         
+/*<button onclick="numbers.forEach(myFunction)">Try it</button>
 
+<p>Updated array: <span id="demo"></span></p>
+
+<script>
+var numbers = [65, 44, 12, 4];
+
+function myFunction(item,index,arr) {
+    arr[index] = item * document.getElementById("multiplyWith").value;
+    demo.innerHTML=numbers;
+    }
+</script>*/
 
 /*let questionsJSX = [];
     for(let questionKey in this.props) {
